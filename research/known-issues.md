@@ -64,13 +64,15 @@ Development Modpack currently contains diagnostic and automation mods. It is not
 
 ## KI-06 — Git history and delivered documentation are inconsistent
 
-**Priority:** high. **Status:** open.
+**Priority:** high. **Status:** history reconciled and setup published on 2026-10-08; normal Git authentication unavailable and documented.
 
 The remote was populated through the authenticated GitHub connector, giving it a different initial history from local Git. New setup files are not yet committed/published, and the output mirror and README tracker lag behind the setup evidence. Ordinary Git authentication is unavailable.
 
 **Actions:** preserve both histories and local work. Reconcile against the existing remote without a force push or losing files; use the connector for authorized publication while ordinary authentication remains unavailable. Commit the actual setup and research, update statuses, refresh the output mirror, and record runtime/tool hashes. State clearly which Git operations work and which require normal authentication.
 
 **Acceptance:** local/remote tracked contents and authoritative history match or their exact remaining limitation is documented; no untracked deliverable is omitted; README, setup evidence and delivered mirror agree. No credentials are committed.
+
+**Progress:** published the reviewed plan, verdict, locks, scripts and setup evidence. Imported connector-retrieved Git objects only after verifying their exact hashes, compared local/remote trees, advanced remote `main` normally, and aligned local `main` without changing working files. The earlier local history is retained at `archive/setup-before-reconciliation` (`93da65d`). Current tracked contents follow the remote history. Refresh the delivered text mirror after documentation updates. Ordinary CLI push/pull authentication is still unavailable; use the authenticated connector until configured.
 
 ## KI-07 — Installer does not detect duplicate mod IDs or all constraints
 

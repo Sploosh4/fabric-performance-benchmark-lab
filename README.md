@@ -225,7 +225,7 @@ Use disposable copies and no valuable gameplay saves. Retain one clean input arc
 | Cesium source/license audit | Preliminary research complete |
 | 26.1.2 candidate world | Downloaded and hashed; saved in 26.1 and listed compatible with 26.1.2; in-game validation untested |
 | Exact route/coordinates/player interactions | Pending world inspection and calibration |
-| Modrinth/Git/GitHub setup | Profile and both repositories available; history/publication reconciliation in progress (KI-06) |
+| Modrinth/Git/GitHub setup | Profile and both repositories available; setup published and histories reconciled; ordinary CLI Git authentication unavailable (KI-06) |
 | PresentMon installation | Windows application/CLI installed; elevated Chrome smoke capture succeeded; Minecraft accuracy untested (KI-04) |
 | spark and compatible entity profiler | spark and Entity Detective installed, with Minescript, Chunky and Fabric API; Minecraft launch and export coverage untested |
 | Fixed presets and pinned candidate stack | Semantic preset and diagnostic tool lock saved; applied game settings and performance stack untested |

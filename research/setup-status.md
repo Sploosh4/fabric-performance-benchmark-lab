@@ -1,6 +1,6 @@
 # Setup evidence and remaining validation
 
-Checked 2026-10-07. The user selected **setup and research first**, deferring exclusive foreground benchmark runs.
+Updated 2026-10-08. Installation/world evidence was collected on 2026-10-07. The user selected **setup and research first**, deferring exclusive foreground benchmark runs.
 
 ## Installed
 
@@ -38,6 +38,14 @@ Source-derived spawn: dimension `minecraft:overworld`, block position **(0, 101,
 - Public upstream-derived fork: [Sploosh4/cesium-fabric](https://github.com/Sploosh4/cesium-fabric). It preserves all six upstream branches and tags. GitHub's ordinary fork of this public upstream is public; the pack repository is private.
 - Local Cesium checkout: `work/cesium-source`, remotes `upstream` and `origin`, branch `port/26.1.2`.
 
-GitHub publication currently uses the authenticated connector. Ordinary command-line Git has no GitHub credentials on this machine. Local Git and the remote repository exist, but their initial commit histories differ because publication used GitHub's contents API. Do not force-push or claim ordinary push/pull synchronization is configured until normal Git authentication and history reconciliation are complete.
+GitHub publication uses the authenticated connector. On 2026-10-08, setup files and the reviewed execution plan were published as `70cc6222b10ecfe945a585929e8d8fdbaf5f8264`. Exact Git object hashes and equal content trees were verified; local and remote `main` were aligned without a force push or changes to working files. The earlier local history remains on `archive/setup-before-reconciliation` at `93da65d`. Later documentation commits retain this reconciled history.
+
+Ordinary command-line Git still has no GitHub credentials on this machine. Local Git operations and authenticated connector publication work; normal CLI push/pull is not configured. No credentials were stored in the repository.
+
+## Planning and source selection
+
+The user's adversarial planning loop passed in its first independent review on 2026-10-08, with zero medium/high plan findings. The concise plan and exact verdict are in `execution-plan.md` and `plan-review.md`. This does not close runtime issues or approve port milestones.
+
+Static branch comparison retains Cesium `ec3e418` as the initial base to avoid importing the newer storage rewrite wholesale; see `cesium-base-decision.md`. Newer hooks remain useful references. No Cesium source changes or tests have occurred.
 
 No Minecraft FPS data has been collected, and no Cesium regression/world tests have run.
