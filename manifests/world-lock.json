@@ -1,0 +1,15 @@
+{
+  "name": "RestWorld_26.1.zip",
+  "source": "https://www.curseforge.com/minecraft/worlds/restworld/files/8147210",
+  "minecraft": [
+    "26.1",
+    "26.1.1",
+    "26.1.2"
+  ],
+  "sha256": "20cc5737bbcb872069d4d0c7e7540c16bd6d22a6704aa0f90d7034c70dd8faf4",
+  "size_bytes": 49135284,
+  "expanded_bytes": 176859034,
+  "runtime_validation": "untested",
+  "author": "Ken Arnold / kcrcarnold",
+  "license_reference": "https://claritypack.com/restworld/index.html"
+}

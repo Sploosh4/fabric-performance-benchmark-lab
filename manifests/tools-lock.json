@@ -1,0 +1,85 @@
+{
+  "minecraft": "26.1.2",
+  "loader": "fabric",
+  "components": [
+    {
+      "slug": "fabric-api",
+      "project_id": "P7dR8mSH",
+      "version_id": "3dM0X6ou",
+      "version": "0.155.3+26.1.2",
+      "license": "Apache-2.0",
+      "source": "https://github.com/FabricMC/fabric",
+      "dependencies": [],
+      "filename": "fabric-api-0.155.3+26.1.2.jar",
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/3dM0X6ou/fabric-api-0.155.3%2B26.1.2.jar",
+      "sha512": "fa0308b42e9cd0dc3ff946f246d199d74547e0c946d7e3c9780a2537155307baf25129f69bd1349273babf879ffb4608b7e4af0740938f9c0f7b371b1c67d6ca",
+      "size": 2521340
+    },
+    {
+      "slug": "spark",
+      "project_id": "l6YH9Als",
+      "version_id": "e3hsPc1o",
+      "version": "1.10.187-fabric",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/lucko/spark",
+      "dependencies": [],
+      "filename": "spark-1.10.187-fabric.jar",
+      "url": "https://cdn.modrinth.com/data/l6YH9Als/versions/e3hsPc1o/spark-1.10.187-fabric.jar",
+      "sha512": "c74bf5d5a16b2445ec6ea717eac756412b272a8015e91f91a7bf5a27e6f2f99c4a11878d434510f941f37b0344b3a7d1ba0dd6c34e80642762c48fb6e9a93894",
+      "size": 3838499
+    },
+    {
+      "slug": "minescript",
+      "project_id": "KcpXWngB",
+      "version_id": "wib8NXKz",
+      "version": "5.0-fabric-26.1.2",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/maxuser0/minescript",
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "minescript-fabric-26.1.2-5.0.jar",
+      "url": "https://cdn.modrinth.com/data/KcpXWngB/versions/wib8NXKz/minescript-fabric-26.1.2-5.0.jar",
+      "sha512": "d5116eb29e105cd1168ed509d60037f1ff8c7ec88acca6b0b713bc2629e17a388acf1a364a34689f9d40ac82a8f9abf23ad650b70bb3a46d2fa3359652a5b693",
+      "size": 1424002
+    },
+    {
+      "slug": "chunky",
+      "project_id": "fALzjamp",
+      "version_id": "4Eotm6ov",
+      "version": "1.5.3",
+      "license": "GPL-3.0-only",
+      "source": "https://github.com/pop4959/Chunky",
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "P7dR8mSH",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "filename": "Chunky-Fabric-1.5.3.jar",
+      "url": "https://cdn.modrinth.com/data/fALzjamp/versions/4Eotm6ov/Chunky-Fabric-1.5.3.jar",
+      "sha512": "b83bfe7b218d0aa6232af977ae741dc1f82b10e50cd12bb759f65cf416b8b62beccb543e587ef0b9670abe03815660f8e091bc6823624d65cf07300571573516",
+      "size": 354095
+    },
+    {
+      "slug": "entity-detective",
+      "project_id": "75dttuA0",
+      "version_id": "cIcm8QRn",
+      "version": "26.1.2+v2.5.4",
+      "license": "MIT",
+      "source": "https://github.com/netcrafts/Entity-Detective",
+      "dependencies": [],
+      "filename": "entity-detective-26.1.2+v2.5.4.jar",
+      "url": "https://cdn.modrinth.com/data/75dttuA0/versions/cIcm8QRn/entity-detective-26.1.2%2Bv2.5.4.jar",
+      "sha512": "65cf456e3f1f516161423d44204c96bca6a088cad3033d5e0d7112616ecbc44884fd406c6e65db03d1c058262974f046d0b5cf81dbe8c6270ce2dcbe8af0c5b3",
+      "size": 108758
+    }
+  ]
+}

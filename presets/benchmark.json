@@ -1,0 +1,10 @@
+{
+  "minecraft": "26.1.2",
+  "status": "proposed; game settings and route not yet validated in-game",
+  "display": {"width": 1920, "height": 1080, "fullscreen": false, "vsync": false, "fps_limit": "unlimited", "render_scale": 1.0},
+  "world": {"render_distance_chunks": 12, "simulation_distance_chunks": 8, "time": "fixed daylight except a scenario-specific override", "weather": "clear except a scenario-specific override"},
+  "graphics": {"quality": "fancy", "clouds": "off", "particles": "all", "entity_distance_percent": 100, "biome_blend_area": "3x3", "shaders": false, "resource_packs": []},
+  "camera": {"fov": 70, "fov_effect_scale": 0, "view_bobbing": false},
+  "runtime": {"java_major": 25, "heap_mib": 4096, "heap_status": "proposed; confirm memory pressure on this hardware"},
+  "capture": {"warmup_seconds": 60, "measurement_seconds": 120, "repetitions": 5, "profiler": "PresentMon only for headline FPS runs", "foreground_required": true, "order": "interleaved/randomized"}
+}

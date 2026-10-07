@@ -1,3 +1,4 @@
+# Runtime and generated artifacts
 work/
 downloads/
 runtime/
@@ -23,12 +24,14 @@ build/
 .venv/
 __pycache__/
 *.pyc
+# Machine-local configuration and credentials
 .env
 .env.*
 local.settings.json
 launcher_accounts.json
 usercache.json
 accounts.json
+# Editors
 .idea/
 .vscode/
 *.tmp

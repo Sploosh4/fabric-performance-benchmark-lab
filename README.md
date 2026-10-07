@@ -1,6 +1,6 @@
 # Minecraft performance modpack and Cesium port
 
-Updated: 2026-10-07. Target: Minecraft Java **26.1.2**, Fabric.
+Updated: 2026-10-08. Target: Minecraft Java **26.1.2**, Fabric.
 
 ## Decisions and current status
 
@@ -13,6 +13,10 @@ Updated: 2026-10-07. Target: Minecraft Java **26.1.2**, Fabric.
 - The user defines Cesium milestones. Milestone Two produces three proposed port milestones; these require the user's definition/approval before execution.
 
 This document distinguishes plans from measured results. No FPS improvements or Cesium runtime correctness have been demonstrated yet. Research, repository setup, installation and measurements each receive their own recorded status.
+
+## Known issues and action plan
+
+The requested hypercritical review is recorded in [research/known-issues.md](research/known-issues.md), with priorities, actions and acceptance criteria for all seven findings. These are work items, **not milestones**. The concise [execution plan](research/execution-plan.md) passed the requested adversarial planning gate on 2026-10-08: the first independent review reported zero medium/high findings; see [review evidence](research/plan-review.md). Setup and research resumed; foreground Minecraft tests remain deferred under the user's setup/research-first decision. Current installation and download evidence is in [research/setup-status.md](research/setup-status.md).
 
 ## License: can we fork and publish Cesium?
 
@@ -68,9 +72,9 @@ Sources: [Minescript documentation](https://minescript.net/docs), [Fabric automa
 
 | Tool | Specific role | Automation | 26.1.2 status |
 | --- | --- | --- | --- |
-| PresentMon | Client frame times, average FPS, tail frame times and stutter counts | Windows CLI, process ID, timed CSV captures | Installation and capture validation pending; standalone Windows tool |
-| spark | CPU call stacks, tick-time diagnosis, allocation/GC and identifying expensive execution paths | Game/server commands; save captures to files | Fabric `1.10.187-fabric`, Modrinth `e3hsPc1o`, available; installation pending |
-| Observable or compatible equivalent | Attribute workload to particular entities/block entities and their locations | Prefer commands and machine-readable export | Original has no published Fabric 26.1.2 build; equivalent research pending |
+| PresentMon | Client frame intervals, average FPS, tail frame times and stutter counts | Windows CLI, process ID, timed CSV captures | Installed 2.6.0; Chrome smoke capture passed; Minecraft/OpenGL calibration untested |
+| spark | CPU call stacks, tick-time diagnosis, allocation/GC and identifying expensive execution paths | Game/server commands; save captures to files | Fabric `1.10.187-fabric`, Modrinth `e3hsPc1o`, installed; in-game validation untested |
+| Entity Detective (Observable substitute) | Entity/block-entity type/location attribution | Commands; structured export must be validated | Installed `26.1.2+v2.5.4`; per-position tick counts are not elapsed time; missing coverage untested |
 
 The tools intentionally measure different layers, though their capabilities overlap slightly. Do not run all profilers during headline FPS runs. First collect PresentMon-only measurements, then separate spark/entity diagnostics. Measure profiler overhead. If no compatible entity profiler exists, use spark where helpful and explicitly mark entity-level timing coverage untested.
 
@@ -80,7 +84,7 @@ Sources: [PresentMon CLI](https://github.com/GameTechDev/PresentMon/blob/main/RE
 
 ## 4. Coordinates, route and interaction specification
 
-**Exact coordinates are pending download and inspection; none are invented here.** Store one authoritative scenario definition with dimension, player XYZ, yaw/pitch, game mode, inventory, target block/entity IDs, waypoint coordinates, tick numbers, action type and expected resulting state. Record the world archive and modified snapshot hashes.
+**Exact route coordinates await in-game inspection and calibration.** The downloaded world's source-derived spawn is `(0, 101, 0)` in the Overworld; it is not a validated waypoint. Store one authoritative scenario definition with dimension, player XYZ, yaw/pitch, game mode, inventory, target block/entity IDs, waypoint coordinates, tick numbers, action type and expected resulting state. Record the world archive and modified snapshot hashes.
 
 Initial scenario set:
 
@@ -172,7 +176,7 @@ For each project record: current relevance, claimed mechanism, measured or unmea
 - Replaces Anvil storage using LMDB and zstd. Main potential benefit is storage/I/O and associated stalls, not automatically higher average FPS.
 - 26.1 changes Java/tooling, dimension locations, player data paths and world-upgrader internals. Cesium's old world-root assumptions, player paths, synthetic mixin targets and upgrade hooks need review.
 - Upstream reports include native crashes under heavy generation, conversion/export failures and chunk/compression problems. Reports are not independently reproduced here: issues [19](https://github.com/CesiumMC/cesium-fabric/issues/19), [31](https://github.com/CesiumMC/cesium-fabric/issues/31), [32](https://github.com/CesiumMC/cesium-fabric/issues/32), [33](https://github.com/CesiumMC/cesium-fabric/issues/33).
-- Preliminary engineering estimate: roughly 2–4 working weeks for a skilled developer to investigate, port and validate; substantial uncertainty remains. No port implementation or regression tests have started.
+- Preliminary engineering estimate: roughly 2–4 working weeks for a skilled developer to investigate, port and validate; substantial uncertainty remains. No port implementation or regression tests have started. A later-discovered `mc/1.21.11` branch targets a release candidate and differs substantially; the figures above describe the older multiversion branch. Compare both before choosing the port base (KI-02).
 
 Alternative research queue: Linear region format implementations, region compression settings supported by the current game, and other maintained storage/conversion projects. Verify exact repositories, current compatibility, migration guarantees and license before recommending any. Chunk scheduling mods are not equivalent storage-format replacements. No verified drop-in Cesium alternative has been selected.
 
@@ -219,12 +223,12 @@ Use disposable copies and no valuable gameplay saves. Retain one clean input arc
 | --- | --- |
 | Target/profile/privacy/testing decisions | Confirmed by user |
 | Cesium source/license audit | Preliminary research complete |
-| 26.1.2 candidate world | Found; download/in-game validation pending |
+| 26.1.2 candidate world | Downloaded and hashed; saved in 26.1 and listed compatible with 26.1.2; in-game validation untested |
 | Exact route/coordinates/player interactions | Pending world inspection and calibration |
-| Modrinth/Git/GitHub setup | In progress |
-| PresentMon installation | Requested; pending |
-| spark and compatible entity profiler | Pending; original Observable unsupported on this target |
-| Fixed presets and pinned candidate stack | Proposed; installation/configuration validation pending |
+| Modrinth/Git/GitHub setup | Profile and both repositories available; history/publication reconciliation in progress (KI-06) |
+| PresentMon installation | Windows application/CLI installed; elevated Chrome smoke capture succeeded; Minecraft accuracy untested (KI-04) |
+| spark and compatible entity profiler | spark and Entity Detective installed, with Minescript, Chunky and Fabric API; Minecraft launch and export coverage untested |
+| Fixed presets and pinned candidate stack | Semantic preset and diagnostic tool lock saved; applied game settings and performance stack untested |
 | Three-instance and individual-mod measurements | Untested |
 | Established packs and niche/abandoned mod review | Preliminary queue only |
 | Cesium Milestone One standards pass | Not started |
