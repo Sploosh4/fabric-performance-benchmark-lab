@@ -64,6 +64,8 @@ This does not restore or modify a world. Continue to use the [host workflow](wor
 
 ## Validation and limits
 
+Compose limits the offline container to 1 GiB memory, two CPUs, 64 processes and 128 MiB temporary storage. Very large captures may need explicitly increased limits; an out-of-memory or storage failure is not successful analysis. Run analysis after a benchmark batch rather than adding its resource load during timed captures. No background-application check enforces this advice.
+
 The Linux image's offline suite and Windows offline suite pass. The container also analyzed the existing completed live diagnostic capture from a read-only Windows mount and produced labeled reports; normal analysis rejected the same diagnostic capture. Only reviewed source dependencies enter the image build context. Local configuration, worlds, captures, account data and native binaries are excluded.
 
 This validates host capture data to container analysis/reporting. It does not validate container-driven game launch, elevated capture, live restoration, automated mod switching or normal automatic comparison batches. No game, world, mod JAR, PresentMon executable or account credential is bundled. Docker image publication is not configured; build locally. The [live validation limitations](live-validation.md) still apply.
