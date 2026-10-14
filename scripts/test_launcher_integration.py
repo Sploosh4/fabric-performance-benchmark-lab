@@ -12,7 +12,7 @@ from launch_lab_world import launch
 class LauncherIntegration(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory(prefix='launcher-integration-fixture-');self.addCleanup(self.temp.cleanup)
-        self.root=Path(self.temp.name);self.profile=self.root/'profiles/lab-fixture';self.profile.mkdir(parents=True)
+        self.root=Path(self.temp.name).resolve();self.profile=self.root/'profiles/lab-fixture';self.profile.mkdir(parents=True)
         self.world='Lab_fixture';save=self.profile/'saves'/self.world;save.mkdir(parents=True);(save/'level.dat').write_bytes(b'fixture')
         (self.profile/'minescript').mkdir()
         self.conditions={'minecraft':'26.1.2','world_folder':self.world,'configured_profile':str(self.profile)}

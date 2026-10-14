@@ -20,7 +20,7 @@ import shutil
 class PortablePreparation(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
-        self.root=Path(self.temp.name);self.saves=self.root/'profile/saves';self.saves.mkdir(parents=True)
+        self.root=Path(self.temp.name).resolve();self.saves=self.root/'profile/saves';self.saves.mkdir(parents=True)
         self.world=self.saves/'Lab_fixture';self.world.mkdir();(self.world/'level.dat').write_bytes(b'valuable-old-world')
         self.archive=self.root/'master.zip';self.recovery=self.root/'state/recovery'
         self.make_archive({'RestWorld/level.dat':b'new-world','RestWorld/session.lock':b'lock'})

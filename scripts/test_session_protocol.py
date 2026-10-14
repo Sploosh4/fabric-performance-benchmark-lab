@@ -20,7 +20,7 @@ class Sessions(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix="validation-session-fixture-")
         self.addCleanup(self.temp.cleanup)
-        self.directory = Path(self.temp.name)
+        self.directory = Path(self.temp.name).resolve()
         self.profile = self.directory / "sodium-automation"
         self.lab = self.profile / "minescript/lab-results"
         self.lab.mkdir(parents=True)

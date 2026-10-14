@@ -15,7 +15,7 @@ class OverheadSafety(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory(prefix="overhead-capture-fixture-")
         self.addCleanup(self.temporary.cleanup)
-        self.directory = Path(self.temporary.name)
+        self.directory = Path(self.temporary.name).resolve()
 
     def phases(self):
         return [{"phase": i, "counter_enabled": enabled,
