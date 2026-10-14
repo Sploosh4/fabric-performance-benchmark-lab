@@ -3,6 +3,9 @@ work/
 downloads/
 runtime/
 raw-results/
+automated-captures/
+paired-captures/
+overhead-captures/
 saves/
 mods/
 logs/
@@ -28,6 +31,14 @@ __pycache__/
 .env
 .env.*
 local.settings.json
+benchmark.local.json
+*.local.json
+outputs/
+session-captures/
+session-controller-logs/
+capture-broker/
+delivery-receipt.json
+*.bundle
 launcher_accounts.json
 usercache.json
 accounts.json

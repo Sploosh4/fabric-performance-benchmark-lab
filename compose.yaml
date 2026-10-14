@@ -1,0 +1,24 @@
+services:
+  offline:
+    build: .
+    image: fabric-performance-benchmark-lab:local
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=128m,mode=1777
+    # Mount only completed captures/archives and a separate report directory.
+    # Do not mount a live Minecraft profile, host credentials or Docker socket.
+    volumes:
+      - type: bind
+        source: ${LAB_INPUT:-./runtime/container-input}
+        target: /data/input
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${LAB_OUTPUT:-./runtime/container-output}
+        target: /data/output
+        bind:
+          create_host_path: false

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "minecraft": "26.1.2",
+  "java_major": "25",
+  "heap_cap_mib": 6144,
+  "heap_alignment_tolerance_mib": 32,
+  "resolution_policy": "Default fullscreen monitor mode; actual framebuffer must match monitor mode",
+  "world_folder": "Lab_RestWorld_sodium_automation",
+  "world_names": [
+    "RestWorld_26.1",
+    "Lab_RestWorld_sodium_automation"
+  ],
+  "dimension": "minecraft:overworld",
+  "start_position": [
+    0.5,
+    101.0,
+    0.5
+  ],
+  "start_orientation": [
+    0.0,
+    6.5
+  ],
+  "position_tolerance_blocks": 0.05,
+  "orientation_tolerance_degrees": 0.1,
+  "options": {
+    "render_distance": 12,
+    "simulation_distance": 8,
+    "vsync": false,
+    "framerate_limit": 260,
+    "graphics_preset": "custom",
+    "cloud_status": "OFF",
+    "biome_blend_radius": 1,
+    "bob_view": false,
+    "fov": 70,
+    "fov_effect_scale": 0.0,
+    "entity_distance_scaling": 1.0,
+    "entity_shadows": true,
+    "camera_type": "FIRST_PERSON",
+    "inactivity_fps_limit": "MINIMIZED"
+  },
+  "headline_capture": {
+    "ac_power_required": true,
+    "chrome_closed": true,
+    "foreground_required": true,
+    "screen_must_be_closed": true,
+    "paused": false,
+    "overlay_disabled": true,
+    "profilers_disabled": true,
+    "normal_logging": true
+  },
+  "benchmark_accepted": false,
+  "remaining_gates": [
+    "Live API/state readiness",
+    "Matched resolution/runtime across profiles",
+    "Fixed camera/world state",
+    "Game-counter/capture calibration",
+    "Instrumentation overhead"
+  ]
+}

@@ -1,0 +1,11 @@
+# Storage and recovery
+
+Keep one immutable master ZIP outside the profile. Restore only its disposable `Lab_` copy with Minecraft closed. Archive names, sizes, hash and paths are validated before replacement. A failed extract is removed by default; `--retain-failed-stage` explicitly retains a diagnostic stage. If installing the staged world fails, the previous world is rolled back. These guarantees are covered by small synthetic fixtures; process races and live filesystem failures still require live review.
+
+The previous disposable world is moved, rather than copied, into `runtime/state/test-saves` with a hash receipt. Default preparation preserves these copies and **is not bounded retention**. With explicit `--prune-owned-recovery`, only verified unchanged copies from the same master/world are eligible; the newest stays. Unknown or edited copies cause preservation/refusal. Historical unreceipted directories are never automatically adopted or pruned.
+
+Raw captures, rejects and acceptance evidence are retained. No automatic compression or discard is implemented. The configurable `maximum_run_bytes` defaults to **1 TiB per capture** and guards runaway output only; it is deliberately far above legitimate observed suites. It is not a disk quota or free-space preflight. CSV plus CLI diagnostic output is monitored; deadline and session limits also remain enforced. Hitting the guard rejects the run and retains available raw evidence.
+
+Historical measurements on this project were about 43.57 MB for an older three-repeat room suite and 77.6–86.8 MB for five-repeat suites. These are examples, not size guarantees for the new route-only protocol. Installing Python/Java/mods/PresentMon is a shared setup cost, not repeated per run. Do not keep reinstalling dependencies or creating launcher master backups.
+
+Before removing old recovery copies: inventory dates, ownership, content hashes and world validity; preserve unique working worlds/mod sets and reproducibility evidence; obtain approval where required. Before any future raw compression: prove round-trip hash equality and analyzer compatibility, then replace only immutable completed captures. No such migration is performed by this release.

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "fabric_benchmark_bootstrap",
+  "version": "0.1.0",
+  "name": "Fabric Benchmark Lab Bootstrap",
+  "description": "One-use experimental-prompt acknowledgement for an explicitly pinned lab world.",
+  "environment": "client",
+  "license": "MIT",
+  "mixins": ["fabric-benchmark-bootstrap.mixins.json"],
+  "depends": {"fabricloader": "0.19.5", "minecraft": "26.1.2", "java": ">=25"}
+}

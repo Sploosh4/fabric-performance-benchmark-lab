@@ -1,0 +1,16 @@
+{
+  "schema": "fabric-performance-benchmark-config-v1",
+  "minecraft": "26.1.2",
+  "loader": "fabric",
+  "fabric_loader": "0.19.5",
+  "profile": "C:/path/to/dedicated-profile",
+  "world_archive": "C:/path/to/RestWorld-master.zip",
+  "world_archive_sha256": "REPLACE_WITH_SHA256_OF_YOUR_MASTER_ARCHIVE",
+  "world_folder": "Lab_RestWorld_benchmark",
+  "world_names": ["RestWorld_26.1", "Lab_RestWorld_benchmark"],
+  "state": "runtime/state",
+  "outputs": "runtime/outputs",
+  "presentmon": "C:/Program Files/Intel/PresentMon/PresentMonConsoleApplication/PresentMon-2.6.0-x64.exe",
+  "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+  "maximum_run_bytes": 1099511627776
+}
